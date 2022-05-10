@@ -1,0 +1,17 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+h3{
+  display: flex;
+  justify-content: center;
+}
+span{
+  display: flex;
+  justify-content: center;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
