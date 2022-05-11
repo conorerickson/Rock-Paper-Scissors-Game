@@ -8,7 +8,7 @@ const rock = "Rock";
 const paper = "Paper";
 const scissors = "Scissors";
 
-function gameLoop(){
+function computerResult(){
   let result = Math.floor(Math.random() * 3);
   if(result === 0){
   comptuerChoice.innerHTML = rock;
@@ -19,7 +19,10 @@ function gameLoop(){
   else{
     comptuerChoice.innerHTML = scissors;
   }
+}
 
+function gameLoop(){
+    computerResult();
     if(playerChoice.innerHTML === comptuerChoice.innerHTML){
       title.innerHTML = "Draw!";
     }
