@@ -4,43 +4,46 @@ let rockBtn = document.getElementById("rock-btn");
 let paperBtn = document.getElementById("paper-btn");
 let scissorsBtn = document.getElementById("scissors-btn");
 let title = document.getElementById("title");
+const rock = "Rock";
+const paper = "Paper";
+const scissors = "Scissors";
 
 function gameLoop(){
   let result = Math.floor(Math.random() * 3);
   if(result === 0){
-  comptuerChoice.innerHTML = "Rock";
+  comptuerChoice.innerHTML = rock;
   }
   else if(result === 1) {
-    comptuerChoice.innerHTML = "Paper";
+    comptuerChoice.innerHTML = paper;
   }
   else{
-    comptuerChoice.innerHTML = "Scissors";
+    comptuerChoice.innerHTML = scissors;
   }
 
     if(playerChoice.innerHTML === comptuerChoice.innerHTML){
       title.innerHTML = "Draw!";
     }
-    else if((playerChoice.innerHTML === "Rock" && comptuerChoice.innerHTML === "Scissors") || (playerChoice.innerHTML === "Paper" && comptuerChoice.innerHTML === "Rock") || (playerChoice.innerHTML === "Scissors" && comptuerChoice.innerHTML === "Paper")) {
+    else if((playerChoice.innerHTML === rock && comptuerChoice.innerHTML === scissors) || (playerChoice.innerHTML === paper && comptuerChoice.innerHTML === rock) || (playerChoice.innerHTML === scissors && comptuerChoice.innerHTML === paper)) {
       title.innerHTML = "You Win!";
     }
-    else if((playerChoice.innerHTML === "Rock" && comptuerChoice.innerHTML === "Paper") || (playerChoice.innerHTML === "Paper" && comptuerChoice.innerHTML === "Scissors") || (playerChoice.innerHTML === "Scissors" && comptuerChoice.innerHTML === "Rock")) {
+    else if((playerChoice.innerHTML === rock && comptuerChoice.innerHTML === paper) || (playerChoice.innerHTML === paper && comptuerChoice.innerHTML === scissors) || (playerChoice.innerHTML === scissors && comptuerChoice.innerHTML === rock)) {
       title.innerHTML = "You Lose!";
     }
   }
 
 function playerResult(){
   rockBtn.addEventListener("click", function(){
-   playerChoice.innerHTML = "Rock";
+   playerChoice.innerHTML = rock;
    gameLoop();
 
   })
   paperBtn.addEventListener("click", function(){
-    playerChoice.innerHTML = "Paper";
+    playerChoice.innerHTML = paper;
     gameLoop();
 
    })
    scissorsBtn.addEventListener("click", function(){
-    playerChoice.innerHTML = "Scissors";
+    playerChoice.innerHTML = scissors;
     gameLoop(); 
    })
 }
